@@ -26,13 +26,13 @@ else
   REPLAST=$2
 fi
 
-#ML16 model
-MODEL=GT16+FO+E
+#GL16 model
+MODEL=GT16+FO
 
-#ML10 model
-#MODEL=GT10+FO+E
+#GL10 model
+#MODEL=GT10+FO
 
-OUTDIR=$DSDIR/rxmlgt_trees/$MODEL
+OUTDIR=$DSDIR/rxvcf_trees/$MODEL
 
 if [ ! -d $OUTDIR ]; then
   mkdir -p $OUTDIR
@@ -42,7 +42,7 @@ STREE=pars{1}
 
 for i in $(seq -f "%04g" $REPFIRST $REPLAST); do
 
-  SNVALI=$DSDIR/snv_haplotypes_dir/snv_hap.$i.phy
+  SNVALI=$DSDIR/vcf_dir/vcf.$i
 
   $CELLPHY RAXML --msa $SNVALI --search --model $MODEL --tree $STREE --prefix $OUTDIR/t$i --threads 1
 done
