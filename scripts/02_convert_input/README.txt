@@ -33,5 +33,7 @@ We assume that <DATADIR> is the root directory of the specific simulation scenar
 
 - SCIPhi
 
-  TODO
+ !!! vcftools required !!!
+
+ $ ./vcf2sciphi.sh <DATADIR>/vcf_dir/vcf.0001
 
