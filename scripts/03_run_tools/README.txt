@@ -14,12 +14,31 @@ By default, first replicate will be used as input. This can be changed as follow
 
   $ ./run_cellphy_ML.sh
 
+
+
 - CellPhy-GL (VCF input)
 
   $ ./run_cellphy_GL.sh
+
 
 - SIFIT
 
   By default, "missing" strategy is used; please modify script to use "keep" or "remove".
 
   $ ./run_sifit.sh
+
+
+- TNT
+
+  $ ./run_TNT.sh
+
+
+- oncoNEM
+
+  $ ./run_oncoNEM.sh
+
+
+- infSCITE
+
+  $ ./run_infSCITE.sh
+
