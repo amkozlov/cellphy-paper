@@ -216,7 +216,7 @@ if __name__ == "__main__":
         j = 0  
         for name in names:
            seq = snvs[name]
-           fname.write(name + " ")
+           fname.write(str(j+1) + "\t" + name + "\n")
            for i in range(len(seq)):
              root_gt = root_snv[i]
              cell_gt = seq[i]
