@@ -66,7 +66,7 @@ if __name__ == "__main__":
           #itree_fname = "%s/iscite_trees/%s/t%04d_final.newick" % (sim_dir, model, i)
           itree_fname = iscite_tree_pat % (sim_dir, model, i, 0)
         elif tool == "tnt":
-          itree_fname = "%s/tnt_trees/%s/%s.snv_hap.%04d.TNT.Tree.newick" % (sim_dir, model, sim_dir, i)
+          itree_fname = "%s/tnt_trees/%s/snv_hap.%04d.TNT.Tree.newick" % (sim_dir, model, i)
         elif tool == "onem":
           itree_fname = "%s/onem_trees/%s/snv_hap.%04d.Tree.newick" % (sim_dir, model, i)
         elif tool == "sifit":
