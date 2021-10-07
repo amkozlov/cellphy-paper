@@ -37,3 +37,15 @@ We assume that <DATADIR> is the root directory of the specific simulation scenar
 
  $ ./vcf2sciphi.sh <DATADIR>/vcf_dir/vcf.0001
 
+- SASC
+
+ !!! uses oncoNEM matrix as input -> please run ./snv2oncoNEM.py first !!!
+
+ $ ./snv2sasc.sh <DATADIR>/snv_haplotypes_dir/snv_hap.0001 < keep | remove | missing >
+
+- SPHYR
+
+ !!! uses oncoNEM matrix as input -> please run ./snv2oncoNEM.py first !!!
+
+ $ ./snv2sphyr.sh <DATADIR>/snv_haplotypes_dir/snv_hap.0001 < keep | remove | missing >
+
