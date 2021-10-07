@@ -42,3 +42,7 @@ By default, first replicate will be used as input. This can be changed as follow
 
   $ ./run_infSCITE.sh
 
+- ScisTree
+
+  $ ./run_scis.sh
+
