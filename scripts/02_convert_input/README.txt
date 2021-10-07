@@ -21,9 +21,11 @@ We assume that <DATADIR> is the root directory of the specific simulation scenar
 
  $ ./snv2infSCITE.py <DATADIR>/snv_haplotypes_dir/snv_hap.0001 <DATADIR>/true_haplotypes_dir/true_hap.0001 < keep | remove | missing >
 
+
 - oncoNEM
 
  $ ./snv2oncoNEM.py <DATADIR>/snv_haplotypes_dir/snv_hap.0001 <DATADIR>/true_haplotypes_dir/true_hap.0001 < keep | remove | missing >
+
 
 - TNT
 
@@ -31,11 +33,6 @@ We assume that <DATADIR> is the root directory of the specific simulation scenar
 
  $ ./snv2TNT.sh <DATADIR>/snv_haplotypes_dir/snv_hap.0001 < keep | remove | missing >
 
-- SCIPhi
-
- !!! vcftools required !!!
-
- $ ./vcf2sciphi.sh <DATADIR>/vcf_dir/vcf.0001
 
 - SASC
 
@@ -43,9 +40,25 @@ We assume that <DATADIR> is the root directory of the specific simulation scenar
 
  $ ./snv2sasc.sh <DATADIR>/snv_haplotypes_dir/snv_hap.0001 < keep | remove | missing >
 
+
 - SPHYR
 
  !!! uses oncoNEM matrix as input -> please run ./snv2oncoNEM.py first !!!
 
  $ ./snv2sphyr.sh <DATADIR>/snv_haplotypes_dir/snv_hap.0001 < keep | remove | missing >
 
+
+- SCIPhi
+
+ !!! vcftools required !!!
+
+ $ ./vcf2sciphi.sh <DATADIR>/vcf_dir/vcf.0001
+
+
+- ScisTree
+
+ !!! vcftools required !!!
+
+ $ ./vcf2scis.sh <DATADIR>/vcf_dir/vcf.0001
+
+- 
