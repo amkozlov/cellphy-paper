@@ -33,7 +33,22 @@ Scripts to convert tool outputs into standardized Newick tree format
   
   $ ./sciphi2tree.sh vcf.0001.gv 0001
 
+
 - ScisTree
 
   $ ./scis2tree.sh scis.log.0001
+
+
+- SASC
+
+!!! ETE3 required !!!
+
+  $ ./sasc2tree.sh snv_hap.0001.missing_mlt.gv
+
+
+- SPHYR
+
+!!! ETE3 required !!!
+
+  $ ./sasc2tree.sh snv_hap.0001.sphyr.dot
 
