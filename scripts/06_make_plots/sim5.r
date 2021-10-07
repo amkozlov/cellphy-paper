@@ -23,6 +23,7 @@ all <- all[all$V1 != "scite_missing",]
 all <- all[all$V1 != "sciphi_default",]
 all <- all[all$V1 != "GTGTR4+FO+E",]
 all <- all[all$V1 != "vcf_GTGTR4+FO",]
+all <- all[all$V1 != "sasc_missing",]
 
 all <- all[all$V2 == cov,]
 
@@ -65,9 +66,9 @@ all$V6 <- factor(all$V6, levels = blvl, labels = blbl)
 mlvl <- c("tnt_missing", "tnt_missing_rfmin",
           "scite_missing",
           "iscite_missing", "iscite_missing_rfmin",
-          "sifit_missing_i200000", "sifit_missing_i20000_r10", "sciphi_truerate",
+          "sifit_missing_i200000", "sifit_missing_i20000_r10", "sciphi_truerate", "scis_default", "sasc_missing",
           "GTGTR4+FO", "GTGTR4+FO+E", "GTGTR4+FO+ERR_PT19", "GPGTR4+FO+ERR_P20", "vcf_GTGTR4+FO", "vcf_GPGTR4+FO")
-mlbl <- c("TNT", "TNT (min)", "SCITE", "infSCITE", "infSCITE (min)", "SiFit", "SiFit_r10", "SCIPhI",
+mlbl <- c("TNT", "TNT (min)", "SCITE", "infSCITE", "infSCITE (min)", "SiFit", "SiFit_r10", "SCIPhI", "ScisTree", "SASC",
           "CellPhy-NOERR", "CellPhy-ML10", "CellPhy+PT19", "CellPhy-ML16", "CellPhy-GL10", "CellPhy-GL16")
 
 all$V1 <- factor(all$V1, levels = mlvl, labels = mlbl)
@@ -75,7 +76,7 @@ all$V1 <- factor(all$V1, levels = mlvl, labels = mlbl)
 #cbFill <- c("#A6CEE3", "#1F78B4", "#FDBF6F", "#FF7F00", "#CAB2D6", "#6A3D9A", "#B15928")
 
 if (showmin == FALSE) {
-  cbFill <- c('palegreen', 'lightblue', 'khaki', 'orange', 'indianred', 'red', 'chocolate', 'brown')
+  cbFill <- c('palegreen', 'lightblue', 'khaki', 'orange', 'moccasin', 'indianred', 'red', 'chocolate', 'brown')
 } else {
   cbFill <- c('darkseagreen1', 'limegreen', 'lightblue', 'deepskyblue',
               'khaki', 'indianred', 'chocolate')

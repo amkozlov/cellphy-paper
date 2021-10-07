@@ -72,10 +72,10 @@ all$V8 <- factor(all$V8, levels = llvl, labels = llbl)
 
 mlvl <- c("tnt_missing",
           "scite_missing",
-          "sifit_missing_i200000", "sifit_missing_i20000_r10", "sciphi_truerate",
+          "sifit_missing_i200000", "sifit_missing_i20000_r10", "sciphi_truerate", "scis_default", "sasc_missing",
           "GTGTR4+FO", "GTGTR4+FO+E", "GPGTR4+FO+ERR_P20", "GPGTR4+FX+ERR_P20", "mlgp_GPGTR4+FO+ERR_P20", 
           "vcf_GTGTR4+FO", "vcf_GPGTR4+FO")
-mlbl <- c("TNT", "SCITE", "SiFit", "SiFit_r10", "SCIPhI",
+mlbl <- c("TNT", "SCITE", "SiFit", "SiFit_r10", "SCIPhI", "ScisTree", "SASC",
           "CellPhy (NOERR)", "CellPhy-ML10", "CellPhy-ML16", "CellPhy-ML16+FX", "CellPhy-MLph", 
           "CellPhy-GL10", "CellPhy-GL16")
 
@@ -85,7 +85,7 @@ all$V1 <- factor(all$V1, levels = mlvl, labels = mlbl)
 
 if (showmin == FALSE) {
 #  cbFill <- c('palegreen', 'khaki', 'indianred', 'red', 'yellow', 'chocolate', 'brown')
-  cbFill <- c('palegreen', 'khaki', 'orange', 'indianred', 'red', 'chocolate', 'brown')
+  cbFill <- c('palegreen', 'khaki', 'orange', "moccasin", 'indianred', 'red', 'chocolate', 'brown')
 #  cbFill <- c('darkseagreen1', 'khaki', 'indianred', 'red', 'chocolate', 'brown')
 } else {
   cbFill <- c('darkseagreen1', 'limegreen', 'khaki', 'indianred', 'chocolate')
@@ -95,7 +95,19 @@ p <- ggplot(data=all, aes(x = V1, y = acc, fill=V1)) + geom_boxplot(outlier.size
 
 #p <- p + geom_point(aes(x = "sifit_missing_i200000", all$V7 = "1000", all$V8 = "50000", y=0.5), colour = "red", size = 2)
 
-ann_text <- data.frame(V1 = "SCIPhI", V7 = "1,000 cells", V8 = "50,000 SNVs", acc = 0.4)
+h = -0.05
+
+ann_text <- data.frame(V1 = "SCIPhI", V7 = "1,000 cells", V8 = "50,000 SNVs", acc = h)
+
+ann_text2 <- data.frame(V1 = "ScisTree", V7 = "1,000 cells", V8 = "50,000 SNVs", acc = h)
+
+ann_text2 <- rbind(ann_text2, data.frame(V1 = "ScisTree", V7 = "1,000 cells", V8 = "10,000 SNVs", acc = h))
+
+ann_text2 <- rbind(ann_text2, data.frame(V1 = "ScisTree", V7 = "1,000 cells", V8 = "1,000 SNVs", acc = h))
+
+ann_text2 <- rbind(ann_text2, data.frame(V1 = "ScisTree", V7 = "500 cells", V8 = "10,000 SNVs", acc = h))
+
+ann_text2 <- rbind(ann_text2, data.frame(V1 = "ScisTree", V7 = "500 cells", V8 = "50,000 SNVs", acc = h))
 
 #p <- p + facet_wrap(~V3, ncol=2)
 
@@ -107,6 +119,8 @@ p <- p + facet_grid(V7~V8)
 #, scales = "free")
 
 p <- p + geom_text(data = ann_text, label = "*", size = 16, color = "orange")
+
+p <- p + geom_text(data = ann_text2, label = "*", size = 16, color = "moccasin")
 
 p <- p + theme_light(base_size = 12) + theme(axis.text = element_text(size = 10)) 
 
